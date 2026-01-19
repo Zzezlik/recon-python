@@ -6,15 +6,16 @@ import sys
 import subprocess
 
 try:
+    #get a first argument ./recon.py <argument-1>
     target = sys.argv[1]
+
+    #check for folder in current directory
     if not os.path.exists(target):
         os.makedirs(target)
         with open(f"{target}/info.txt", "w") as fp:
             fp.write(f"Target initialized: {target}")
             pass
-        #print(os.system(f"ping -c 2 {target}"))
 
-        #os.system(f"ping -c 2 {target}")
         print(f"[*] Scanning {target}")
         try:
             subprocess.run(["ping", "-c", "2", target], check=True)
@@ -30,7 +31,9 @@ try:
         
     else:
         print(f"[!] file already exists")
+#filter errors if args not given
 except IndexError:
-    print(f"Usage:\n./caseCreator.py <target>")
+    print(f"Usage:\n./recon.py <target>")
+#target is not reachable
 except subprocess.CalledProcessError:
-    print(f"Unknown host '{target}'\ncheck your input")
+    print(f"Unknown host '{target}'\nTarget is unreachable")
