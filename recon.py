@@ -13,27 +13,27 @@ try:
     if not os.path.exists(target):
         os.makedirs(target)
         with open(f"{target}/info.txt", "w") as fp:
-            fp.write(f"Target initialized: {target}")
+            fp.write(f"\nTarget initialized: {target}\n")
             pass
 
-        print(f"[*] Scanning {target}")
+        print(f"\n[*] Scanning {target}\n")
         try:
             subprocess.run(["ping", "-c", "2", target], check=True)
-            print(f"[+] {target} is reachable")
+            print(f"\n[+] {target} is reachable\n")
 
         except subprocess.CalledProcessError:
-            print(f"[-] {target} is not reachable")
+            print(f"\n[-] {target} is not reachable\n")
 
         try:
-            subprocess.run(["nmap", "-F", target, "-oN", f"nmap-{target}.txt"], check=True)
+            subprocess.run(["nmap", "-T5", "-script=finger,ftp-anon,http-google-malware,http-robots.txt", "-sC", target, "-oN", f"./{target}/nmap-{target}.txt"], check=True)
         except:
-            print(f"[-] Nmap error")
+            print(f"\n[-] Nmap error\n")
         
     else:
-        print(f"[!] file already exists")
+        print(f"\n[!] file already exists\n")
 #filter errors if args not given
 except IndexError:
-    print(f"Usage:\n./recon.py <target>")
+    print(f"\nUsage:\n./recon.py <target>\n")
 #target is not reachable
 except subprocess.CalledProcessError:
-    print(f"Unknown host '{target}'\nTarget is unreachable")
+    print(f"\nUnknown host '{target}'\nTarget is unreachable\n")
