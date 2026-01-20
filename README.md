@@ -10,17 +10,17 @@ Running script as root, will use -sV (determine open ports service version) and 
 
 Usage:
     
-    chmod +x ./recon.sh
+    chmod +x ./recon.py
     
 ------- 
     
-    ./recon.sh <target> 
+    ./recon.py <target> 
 -
     : default recon run
 
 ------- 
 
-    sudo ./recon.sh <target>
+    sudo ./recon.py <target>
 -
     : advanced recon run
 
