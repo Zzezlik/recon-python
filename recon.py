@@ -37,7 +37,7 @@ try:
 
     try:
         if root:
-            subprocess.run(["nmap", "-T3", "-script=vuln", "-sC", "-sV", "-osscan-guess", target, "-oN", f"./{target}/nmap-{target}.txt"], check=True)
+            subprocess.run(["nmap", "-T3", "-script=vuln", "-sC", "-sV", "-osscan-guess", "-O", target, "-oN", f"./{target}/nmap-{target}.txt"], check=True)
         else:
             subprocess.run(["nmap", "-T3", "-script=vuln", "-sC", target, "-oN", f"./{target}/nmap-{target}.txt"], check=True)
     except:
