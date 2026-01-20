@@ -5,7 +5,7 @@ Automates `ping` and `nmap` scans based on user privileges.
 
 ## Features
 - **Basic Scan:** Ping + Standard Nmap.
-- **Root Scan:** Detecting OS (`-O`) and Service Version (`-sV`) automatically if run with `sudo`.
+- **Root Scan:** Detecting OS (`-O -osscan-guess`) and Service Version (`-sV`) automatically if run with `sudo`.
 
 ## Installation
 
