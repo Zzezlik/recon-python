@@ -1,26 +1,29 @@
 # recon-python
 
-Tool for recon domain/ip
+Network reconnaissance tool for domains/IPs.
+Automates `ping` and `nmap` scans based on user privileges.
 
-by using these tool:
-    ping
-    nmap
+## Features
+- **Basic Scan:** Ping + Standard Nmap.
+- **Root Scan:** Detecting OS (`-O`) and Service Version (`-sV`) automatically if run with `sudo`.
 
-Running script as root, will use -sV (determine open ports service version) and -osscan-guess (guess the os of target)
+## Installation
 
-Usage:
-    
-    chmod +x ./recon.py
-    
-------- 
-    
-    ./recon.py <target> 
--
-    : default recon run
+```bash
+git clone [https://github.com/Zzezlik/recon-python.git](https://github.com/Zzezlik/recon-python.git)
+cd recon-python
+chmod +x recon.py
+```
+Usage
 
-------- 
+Default Scan:
+Bash
 
-    sudo ./recon.py <target>
--
-    : advanced recon run
+./recon.py <target>
 
+Advanced Scan (Root):
+Bash
+
+sudo ./recon.py <target>
+
+Created by Ath
