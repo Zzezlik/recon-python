@@ -12,11 +12,11 @@ Usage:
     
     chmod +x ./recon.sh
     
-    
+------- 
     
     ./recon.sh <target> : default recon run
 
-
+------- 
 
     sudo ./recon.sh <target> : advanced recon run
 
