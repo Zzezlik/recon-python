@@ -17,13 +17,11 @@ chmod +x recon.py
 Usage
 
 Default Scan:
-Bash
-
-./recon.py <target>
-
+```Bash
+    ./recon.py <target>
+```
 Advanced Scan (Root):
-Bash
-
-sudo ./recon.py <target>
-
+```Bash
+    sudo ./recon.py <target>
+```
 Created by Ath
