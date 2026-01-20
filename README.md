@@ -18,10 +18,10 @@ Usage
 
 Default Scan:
 ```Bash
-    ./recon.py <target>
+./recon.py <target>
 ```
 Advanced Scan (Root):
 ```Bash
-    sudo ./recon.py <target>
+sudo ./recon.py <target>
 ```
 Created by Ath
